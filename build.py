@@ -60,13 +60,21 @@ def side_of(project):
     return "both"
 
 
-def resolve(slug, cfg):
+def resolve(slug, cfg, pin=None):
     versions = get(f"/project/{slug}/version", loaders=["fabric"], game_versions=[cfg["minecraft"]])
     if not versions:
         sys.exit(f"STOP: {slug} has no Fabric {cfg['minecraft']} version on Modrinth")
-    # the newest version within the best channel available
-    best = min(RANK.get(x["version_type"], 3) for x in versions)
-    v = max((x for x in versions if RANK.get(x["version_type"], 3) == best), key=lambda x: x["date_published"])
+    if pin:
+        # mods.toml pins this mod, because its newest version needs something
+        # the rest of the pack does not ship (see the note at the pin)
+        pinned = [x for x in versions if x["version_number"] == pin]
+        if not pinned:
+            sys.exit(f"STOP: {slug} has no Fabric {cfg['minecraft']} version {pin} on Modrinth")
+        v = pinned[0]
+    else:
+        # the newest version within the best channel available
+        best = min(RANK.get(x["version_type"], 3) for x in versions)
+        v = max((x for x in versions if RANK.get(x["version_type"], 3) == best), key=lambda x: x["date_published"])
     f = next((x for x in v["files"] if x["primary"]), v["files"][0])
     return {
         "project_id": v["project_id"],
@@ -90,15 +98,18 @@ def main():
     lock = {} if update or not lock_path.exists() else json.loads(lock_path.read_text())
 
     want = {}  # slug -> {"side", "packs", "name", "library"}
+    pins = {}  # slug -> version_number, from an optional `version` in mods.toml
     for m in spec["mod"]:
         want[m["slug"]] = {"side": m["side"], "packs": set(m["packs"]), "name": m["name"], "library": False}
+        if "version" in m:
+            pins[m["slug"]] = m["version"]
 
     by_id = {}      # project id -> slug, or None for a dependency Fabric never loads
     queue = list(want)
     while queue:
         slug = queue.pop(0)
-        if slug not in lock:
-            lock[slug] = resolve(slug, cfg)
+        if slug not in lock or (slug in pins and lock[slug]["version_number"] != pins[slug]):
+            lock[slug] = resolve(slug, cfg, pins.get(slug))
             time.sleep(0.25)
         entry = lock[slug]
         by_id[entry["project_id"]] = slug
@@ -161,6 +172,7 @@ def main():
         print(f"{fname}: {len(files)} files ({n_cli} client, {n_srv} server)")
     nonrelease = sorted(f"{s} ({lock[s]['version_type']})" for s in want if lock[s]["version_type"] != "release")
     print("not a release:", ", ".join(nonrelease) or "none")
+    print("pinned:", ", ".join(f"{s} {v}" for s, v in sorted(pins.items())) or "none")
 
 
 if __name__ == "__main__":

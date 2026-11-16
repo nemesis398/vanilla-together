@@ -28,6 +28,15 @@ There is no zip of mod jars. An `.mrpack` holds only download links and
 hashes from Modrinth, so it can be shared freely; a zip would redistribute
 mods whose licenses may not allow that.
 
+### Known issues
+
+- **e4mc and Krypton crash the game together.** Both change the same
+  encryption call at login, and the game stops at startup with a Krypton
+  mixin error. The packs do not contain e4mc; if you add it to your own
+  instance, disable Krypton there. A player does not need Krypton to join.
+- **Crash Assistant** (full pack) opens a "game crashed" window whenever the
+  game ends abnormally, also when it is killed rather than closed.
+
 ## Building
 
     ./build.py            # from lock.json, the same pack every time
@@ -38,6 +47,12 @@ drop a mod (`packs = ["full"]` or `["full", "essential"]`), run it, and
 commit `mods.toml` with `lock.json`. Required libraries are added by
 themselves. Files in `overrides/<pack>/` land in that pack's overrides.
 `dist/` is not committed.
+
+`build.py --update` takes each mod's newest version on its own and does not
+check the version ranges mods require of each other, so start both packs
+once in a launcher before a release. When a newest version needs something
+the pack does not ship, pin the older one with `version = "..."` in
+`mods.toml`, with a note on why.
 
 ## Running a server
 

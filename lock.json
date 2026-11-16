@@ -112,17 +112,17 @@
   "version_type": "beta"
  },
  "better-block-entities": {
-  "filename": "bbe-fabric-1.4.1+mc26.3-mod.jar",
+  "filename": "bbe-fabric-1.4.0+mc26.3-mod.jar",
   "project_id": "ONZm0H7Y",
   "requires": [
    "AANobbMI"
   ],
-  "sha1": "638253dbece7b4394bf3b8d44a4b9c62991bee42",
-  "sha512": "c3b5b92da1b7d1a45fe227dc03555c5a7d6fd722a6a0c7d834a8499205d5451a563f74a9f8bb12b3f0de0a2c7526b4b90cf2f9f3eb71537ef653fafaa30aeb1b",
-  "size": 207610,
-  "url": "https://cdn.modrinth.com/data/ONZm0H7Y/versions/wORq9rW6/bbe-fabric-1.4.1%2Bmc26.3-mod.jar",
-  "version_id": "wORq9rW6",
-  "version_number": "1.4.1+mc26.3",
+  "sha1": "ef6cb9b2a7c2074e35a5994953f773e043070df3",
+  "sha512": "061404c7a546fcf97b1e95c84be6538634ef8a64c38c50ab52413bc30eb3ca631d70469ec9a5ec6e701bbfbbd9779d65a3a70e359e80d8c36449ff2a2d286cab",
+  "size": 207605,
+  "url": "https://cdn.modrinth.com/data/ONZm0H7Y/versions/FU2tstk7/bbe-fabric-1.4.0%2Bmc26.3-mod.jar",
+  "version_id": "FU2tstk7",
+  "version_number": "1.4.0+mc26.3",
   "version_type": "release"
  },
  "better-mount-hud": {
