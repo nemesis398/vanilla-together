@@ -1,0 +1,422 @@
+# Vanilla Together for Fabric 26.3: the mods and the packs each belongs to.
+# side:  server = the server only, client = player packs only,
+#        both = everywhere. Libraries are not listed: build.py adds every
+#        required dependency of a listed mod and gives it the same packs.
+# packs: "full" holds everything; "essential" is what a player needs to join
+#        and talk (voice chat, ping wheel) plus the performance mods.
+#        A server runs the server side of "full".
+
+[pack]
+name = "Vanilla Together"
+version = "1.0.0"
+summary = "Vanilla Minecraft, just smoother: performance, maps, claims and proximity voice chat on Fabric 26.3"
+minecraft = "26.3"
+fabric_loader = "0.20.1"
+
+[[mod]]
+slug = "chunky"
+name = "Chunky"
+side = "server"
+packs = ["full"]
+
+[[mod]]
+slug = "clumps"
+name = "Clumps"
+side = "server"
+packs = ["full"]
+
+[[mod]]
+slug = "ledger"
+name = "Ledger"
+side = "server"
+packs = ["full"]
+
+[[mod]]
+slug = "lmd"
+name = "Let Me Despawn"
+side = "server"
+packs = ["full"]
+
+[[mod]]
+slug = "netherportalfix"
+name = "NetherPortalFix"
+side = "server"
+packs = ["full"]
+
+[[mod]]
+slug = "open-parties-and-claims"
+name = "Open Parties and Claims"
+side = "server"
+packs = ["full"]
+
+[[mod]]
+slug = "scalablelux"
+name = "ScalableLux"
+side = "server"
+packs = ["full"]
+
+[[mod]]
+slug = "spark"
+name = "spark"
+side = "server"
+packs = ["full"]
+
+[[mod]]
+slug = "appleskin"
+name = "AppleSkin"
+side = "both"
+packs = ["full"]
+
+[[mod]]
+slug = "debugify"
+name = "Debugify"
+side = "both"
+packs = ["full"]
+
+[[mod]]
+slug = "ferrite-core"
+name = "FerriteCore"
+side = "both"
+packs = ["essential", "full"]
+
+[[mod]]
+slug = "jade"
+name = "Jade 🔍"
+side = "both"
+packs = ["full"]
+
+[[mod]]
+slug = "krypton"
+name = "Krypton"
+side = "both"
+packs = ["essential", "full"]
+
+[[mod]]
+slug = "lithium"
+name = "Lithium"
+side = "both"
+packs = ["essential", "full"]
+
+[[mod]]
+slug = "modernfix-mvus"
+name = "ModernFix-mVUS"
+side = "both"
+packs = ["essential", "full"]
+
+[[mod]]
+slug = "no-chat-reports"
+name = "No Chat Reports"
+side = "both"
+packs = ["full"]
+
+[[mod]]
+slug = "ping-wheel"
+name = "Ping Wheel"
+side = "both"
+packs = ["essential", "full"]
+
+[[mod]]
+slug = "rei"
+name = "Roughly Enough Items (REI)"
+side = "both"
+packs = ["full"]
+
+[[mod]]
+slug = "simple-voice-chat"
+name = "Simple Voice Chat"
+side = "both"
+packs = ["essential", "full"]
+
+[[mod]]
+slug = "entity-model-features"
+name = "[EMF] Entity Model Features"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "entitytexturefeatures"
+name = "[ETF] Entity Texture Features"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "advancement-plaques"
+name = "Advancement Plaques"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "ambientsounds"
+name = "AmbientSounds"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "animaticarefabricated"
+name = "Animatica Refabricated"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "better-advancements"
+name = "Better Advancements"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "better-block-entities"
+name = "Better Block Entities"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "better-mount-hud"
+name = "Better Mount HUD"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "better-stats"
+name = "Better Statistics Screen"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "bettergrassify"
+name = "BetterGrassify"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "cape-provider"
+name = "Cape Provider"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "chat-heads"
+name = "Chat Heads"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "continuity"
+name = "Continuity"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "controlify"
+name = "Controlify (Controller support)"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "controlling"
+name = "Controlling"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "crash-assistant"
+name = "Crash Assistant"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "cubes-without-borders"
+name = "Cubes Without Borders"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "dynamic-fps"
+name = "Dynamic FPS"
+side = "client"
+packs = ["essential", "full"]
+
+[[mod]]
+slug = "enhanced-overlay"
+name = "Enhanced Overlay"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "entityculling"
+name = "Entity Culling"
+side = "client"
+packs = ["essential", "full"]
+
+[[mod]]
+slug = "fastquit"
+name = "FastQuit"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "fogbegone"
+name = "FogBeGone"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "gamma-utils"
+name = "Gamma Utils (Fullbright)"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "immediatelyfast"
+name = "ImmediatelyFast"
+side = "client"
+packs = ["essential", "full"]
+
+[[mod]]
+slug = "inventory-profiles-next"
+name = "Inventory Profiles Next"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "iris"
+name = "Iris Shaders"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "ixeris"
+name = "Ixeris"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "lambdynamiclights"
+name = "LambDynamicLights - Dynamic Lights"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "language-reload"
+name = "Language Reload"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "main-menu-credits"
+name = "Main Menu Credits"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "modmenu"
+name = "Mod Menu"
+side = "client"
+packs = ["essential", "full"]
+
+[[mod]]
+slug = "morechathistory"
+name = "More Chat History"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "moreculling"
+name = "More Culling"
+side = "client"
+packs = ["essential", "full"]
+
+[[mod]]
+slug = "mouse-tweaks"
+name = "Mouse Tweaks"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "optigui"
+name = "OptiGUI"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "polytone"
+name = "Polytone"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "puzzle"
+name = "Puzzle"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "reeses-sodium-options"
+name = "Reese's Sodium Options"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "rrls"
+name = "Remove Reloading Screen"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "renice-shot"
+name = "Renice Shot"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "shulkerboxtooltip"
+name = "Shulker Box Tooltip"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "skyboxify"
+name = "Skyboxify"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "sodium"
+name = "Sodium"
+side = "client"
+packs = ["essential", "full"]
+
+[[mod]]
+slug = "sodium-extra"
+name = "Sodium Extra"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "sodium-shadowy-path-blocks"
+name = "Sodium Shadowy Path Blocks (SSPB)"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "sound-physics-remastered"
+name = "Sound Physics Remastered"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "xaeros-minimap"
+name = "Xaero's Minimap"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "xaeros-world-map"
+name = "Xaero's World Map"
+side = "client"
+packs = ["full"]
+
+[[mod]]
+slug = "zoomify"
+name = "Zoomify (Zoom)"
+side = "client"
+packs = ["full"]
